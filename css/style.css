@@ -33,6 +33,7 @@
 }
 
 html {
+    position: relative;
     scroll-behavior: smooth;
 }
 
@@ -50,3 +51,27 @@ a {
     align-items: center;
 }
 
+/* Start cols */
+
+.cols {
+    position: absolute;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    justify-items: center;
+    inset-block: 0;
+    inset-inline: 0;
+}
+
+.col {
+    block-size: 100%;
+    inline-size: 0.1px;
+    background-color: rgb(56 63 130 / 10%);
+}
+
+@media (max-width: 991px) {
+    .cols {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* End cols */
