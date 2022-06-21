@@ -66,6 +66,16 @@ a {
     }
 }
 
+section {
+    margin-block: 4rem;
+}
+
+@media (max-width: 62em) {
+    section {
+        margin-block: 2rem;
+    }
+}
+
 /* End global rules */
 
 /* Start cols */
@@ -222,6 +232,7 @@ header .container {
         inset-block-start: 5.625rem;
         flex-direction: column;
         background-color: #4A7EFF;
+        z-index: 5;
         display: none;
     }
 
@@ -256,3 +267,119 @@ header .container {
 }
 
 /* End header */
+
+/* Start main */
+
+/* Start landing section */
+.landing {
+    position: relative;
+}
+
+.landing__image {
+    position: absolute;
+    background: url(../images/landing_img.png) no-repeat;
+    background-size: contain;
+    block-size: 15rem;
+    inline-size: 18rem;
+    inset-block-start: -6.25rem;
+    inset-inline-start: 1.875rem;
+}
+
+.landing__title {
+    color: var(--dark-blue);
+    font-size: 6.875rem;
+    font-weight: 900;
+    letter-spacing: 2.5px;
+    margin-block: 0 3.375rem;
+}
+
+.landing-content__container {
+    justify-content: space-between;
+}
+
+.landing__content {
+    inline-size: 48%;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.landing__subtitle {
+    color: var(--font-color);
+    font-size: 2rem;
+    font-weight: 600;
+    line-height: 140%;
+}
+
+.landing__body {
+    color: var(--font-color);
+    font-size: 1.25rem;
+    font-weight: 400;
+    line-height: 160%;
+    margin: 1.25rem 0 3.25rem;
+}
+
+.landing__btn {
+    display: block;
+    padding: 0.6em 2rem;
+    background-color: var(--third-main-color);
+    color: var(--white);
+    border-radius: 8px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    font-size: 1.25rem;
+    line-height: 130%;
+}
+
+.landing__icon {
+    font-family: "Font Awesome 6 Free";
+    font-weight: 700;
+    color: var(--white);
+    margin-inline-start: 6px;
+    transform: rotate(-40deg);
+}
+
+@media (max-width: 62em) {
+    .landing__image {
+        block-size: 12rem;
+        inline-size: 14rem;
+        inset-block-start: -4.2rem;
+        inset-inline-start: -6.5rem;
+    }
+
+    .landing__title {
+        font-size: 2.75rem;
+        letter-spacing: 2.5px;
+        line-height: 140%;
+        margin-block: 0 1.5rem;
+    }
+
+    .landing-content__container {
+        flex-direction: column;
+    }
+
+    .landing__content {
+        inline-size: 100%;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .landing__subtitle {
+        font-size: 1.5rem;
+    }
+
+    .landing__body {
+        inline-size: 90%;
+        font-size: .875rem;
+        margin: 1rem 0 1.5rem;
+    }
+
+    .landing__btn {
+        inline-size: 100%;
+        font-size: 1rem;
+        text-align: center;
+    }
+}
+
+/* End landing section */
+
+/* End main */
