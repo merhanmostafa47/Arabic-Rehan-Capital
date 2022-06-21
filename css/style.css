@@ -18,7 +18,7 @@
     --box-shadow: 7px 10px 34px 0 rgba(74 125 255 / 10%);
 }
 
-/* General */
+/* General rules */
 
 * {
     box-sizing: border-box;
@@ -51,10 +51,17 @@ a {
     align-items: center;
 }
 
+.container {
+    inline-size: 100%;
+    padding-inline: 12rem;
+    margin-inline: auto;
+}
+
 /* Start cols */
 
 .cols {
     position: absolute;
+    inline-size: 100%;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     justify-items: center;
