@@ -408,8 +408,8 @@ header .container {
     background-size: contain;
     block-size: 26rem;
     inline-size: 26rem;
-    inset-block-end: 3rem;
-    inset-inline-start: 4rem;
+    inset-block-end: -2rem;
+    inset-inline-start: -1rem;
 }
 
 .benefits .container {
