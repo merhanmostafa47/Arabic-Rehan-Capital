@@ -133,7 +133,7 @@ header::after {
     background: url(../images/header_pattern.png) no-repeat;
     background-size: cover;
     inset-block: 0;
-    inset-block: 0;
+    inset-inline: 0;
     z-index: -1;
 }
 
@@ -519,6 +519,88 @@ header .container {
 
 /* End benefits section */
 
+/* Start about section */
+.about {
+    background: url(../images/about_pattern.png) no-repeat;
+    background-size: cover;
+    margin-block-end: 0;
+}
+
+.about .container {
+    justify-content: space-between;
+}
+
+.about__image {
+    inline-size: 48%;
+    margin-block-end: 4rem;
+}
+
+.about__image img {
+    max-inline-size: 100%;
+}
+
+.about__content {
+    inline-size: 48%;
+}
+
+.about__header {
+    justify-content: space-between;
+    margin-block-end: 2rem;
+}
+
+.about__more {
+    color: var(--dark-blue);
+    font-size: 1.25rem;
+    font-weight: 600;
+    line-height: 150%;
+}
+
+.about .landing__icon {
+    color: var(--dark-blue);
+}
+
+.about__body {
+    justify-content: space-between;
+    margin-block-end: 4rem;
+}
+
+.about__text {
+    color: var(--font-color);
+    font-size: 1rem;
+    line-height: 160%;
+    inline-size: 46%;
+}
+
+@media (max-width: 62em) {
+
+    .about .container,
+    .about__body {
+        flex-direction: column;
+    }
+
+    .about__body {
+        align-items: flex-start;
+        margin-block-end: 2rem;
+    }
+
+    .about__image {
+        margin-block-end: 2.5rem;
+    }
+
+    .about__image,
+    .about__content,
+    .about__text {
+        inline-size: 100%;
+    }
+
+    .about__text {
+        font-size: .875rem;
+        margin-block-end: 1rem;
+    }
+}
+
+/* End about section */
+
 /* End main */
 
 /* Start footer */
@@ -556,7 +638,7 @@ header .container {
 }
 
 .navigation__item:not(:last-of-type) {
-    padding-block-end: 2rem;
+    padding-block-end: 1.8rem;
 }
 
 .navigation__link {
@@ -607,12 +689,19 @@ header .container {
     color: var(--light-gray);
 }
 
+.social__link:hover .social__icon {
+    color: var(--main-color);
+}
+
 @media (max-width:62em) {
     .footer>.container {
         padding-block: 2rem;
     }
 
-    .footer .logo-container,
+    .footer .logo-container {
+        margin-block: 0 2rem;
+    }
+
     .footer__title {
         margin-block: 2.5rem 1rem;
     }
