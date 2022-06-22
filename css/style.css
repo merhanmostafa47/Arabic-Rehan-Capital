@@ -14,7 +14,7 @@
     --dark-blue: #383F82;
     --light-gray: #D1D4E9;
     --white: #fff;
-    --gradiant-color: linear-gradient(270deg, #4A7EFF, #55FEBE);
+    --gradiant-color: linear-gradient(-40deg, #4A7EFF, #55FEBE);
     --box-shadow: 7px 10px 34px 0 rgba(74 125 255 / 10%);
     --main-transition-duration: 0.3s;
 }
@@ -67,13 +67,13 @@ a {
 }
 
 section {
-    margin-block: 4rem;
+    margin-block: 7.375rem;
     position: relative;
 }
 
 @media (max-width: 62em) {
     section {
-        margin-block: 2rem;
+        margin-block: 3.75rem;
     }
 }
 
@@ -519,6 +519,62 @@ header .container {
 
 /* End benefits section */
 
+/* Start why section */
+.why .section-title {
+    margin-block-end: 3rem;
+}
+
+.boxes-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(16em, 1fr));
+    column-gap: 5rem;
+    color: var(--font-color);
+}
+
+.box__icon {
+    inline-size: 5.75rem;
+    block-size: 5.75rem;
+    background: var(--gradiant-color);
+    border-radius: .5rem;
+    justify-content: center;
+    margin-block-end: 2rem;
+}
+
+.box__icon img {
+    inline-size: 50%;
+}
+
+.box__title {
+    font-size: 1.75rem;
+    font-weight: 700;
+    margin-block-end: 1rem;
+    line-height: 140%;
+}
+
+.box__body {
+    font-weight: 1rem;
+    line-height: 160%;
+}
+
+@media (max-width:62em) {
+    .box {
+        margin-block-end: 2rem;
+    }
+
+    .box__icon {
+        inline-size: 5rem;
+        block-size: 5rem;
+        margin-block-end: 1.5rem;
+    }
+
+    .box__title {
+        font-size: 1rem;
+        margin-block-end: .75rem;
+    }
+}
+
+/* End why section */
+
 /* Start about section */
 .about {
     background: url(../images/about_pattern.png) no-repeat;
@@ -532,7 +588,7 @@ header .container {
 
 .about__image {
     inline-size: 48%;
-    margin-block-end: 4rem;
+    margin-block-end: 7.375rem;
 }
 
 .about__image img {
@@ -580,7 +636,7 @@ header .container {
 
     .about__body {
         align-items: flex-start;
-        margin-block-end: 2rem;
+        margin-block-end: 3.75rem;
     }
 
     .about__image {
@@ -690,7 +746,7 @@ header .container {
 }
 
 .social__link:hover .social__icon {
-    color: var(--main-color);
+    color: var(--background-color);
 }
 
 @media (max-width:62em) {
