@@ -68,6 +68,7 @@ a {
 
 section {
     margin-block: 4rem;
+    position: relative;
 }
 
 @media (max-width: 62em) {
@@ -80,7 +81,6 @@ section {
     color: var(--dark-blue);
     font-size: 3rem;
     font-weight: 700;
-    letter-spacing: 2px;
     line-height: 140%;
     margin: 0;
 }
@@ -109,9 +109,10 @@ section {
     block-size: 100%;
     inline-size: 0.1px;
     background-color: rgb(56 63 130 / 10%);
+    z-index: 10;
 }
 
-@media (max-width: 62px) {
+@media (max-width: 62em) {
     .cols {
         grid-template-columns: repeat(2, 1fr);
     }
@@ -164,14 +165,24 @@ header .container {
     border-radius: 1px;
     margin: 0.25rem auto;
     background-color: var(--dark-blue);
+    transition: var(--main-transition-duration);
+}
+
+.main-nav {
+    transition: 0.5s ease-in-out;
 }
 
 .main-nav__list {
     margin-inline: 1rem;
+    transition: 0.5s ease-in-out;
 }
 
 .main-nav__item {
     margin-inline-start: 2.5rem;
+}
+
+.main-nav__item:last-of-type {
+    display: none;
 }
 
 .main-nav__link {
@@ -182,6 +193,26 @@ header .container {
 .main-nav__link:hover {
     color: var(--third-main-color);
     font-weight: 700;
+}
+
+.main-nav__btn {
+    display: block;
+    padding: 0.6em 2rem;
+    background-color: var(--third-main-color);
+    color: var(--white);
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 1.25rem;
+    line-height: 130%;
+    text-align: center;
+}
+
+.main-nav__icon {
+    font-family: "Font Awesome 6 Free";
+    font-weight: 700;
+    color: var(--white);
+    margin-inline-start: 6px;
+    transform: rotate(-40deg);
 }
 
 .more-info .lang {
@@ -210,14 +241,13 @@ header .container {
 }
 
 @media (max-width: 62em) {
+    header .container {
+        background-color: var(--background-color);
+    }
+
     .hamburger {
         display: block;
         order: 1;
-    }
-
-    .main-nav:hover .main-nav__list {
-        display: flex;
-
     }
 
     .logo-container {
@@ -227,12 +257,24 @@ header .container {
         order: 2;
     }
 
-    .more-info {
-        order: 3;
+    .main-nav:hover .hamburger .bar:nth-child(2) {
+        opacity: 0;
     }
 
-    .login-btn {
-        display: none;
+    .main-nav:hover .hamburger .bar:nth-child(1) {
+        transform: translateY(0.5rem) rotate(45deg);
+    }
+
+    .main-nav:hover .hamburger .bar:nth-child(3) {
+        transform: translateY(-0.3rem) rotate(-45deg);
+    }
+
+    .main-nav:hover .main-nav__list {
+        display: flex;
+    }
+
+    .main-nav:hover .main-nav__item:last-of-type {
+        display: block;
     }
 
     .main-nav__list,
@@ -243,32 +285,42 @@ header .container {
 
     .main-nav__list {
         position: fixed;
-        inline-size: 60%;
-        inset-block-start: 3rem;
+        inline-size: 100%;
+        inset-block-start: 2.8rem;
+        inset-inline: 0;
+        inset-block-end: 0;
         flex-direction: column;
-        background-color: #4A7EFF;
+        background-color: var(--background-color);
         z-index: 5;
         display: none;
-    }
-
-    .hamburger:hover .main-nav__list {
-        display: flex;
+        transition: var(--main-transition-duration);
     }
 
     .main-nav__item {
-        padding: 1rem;
+        padding: 1.25rem;
         inline-size: 100%;
-        border-bottom: 1px solid var(--white);
         transition: var(--main-transition-duration);
     }
 
     .main-nav__link,
     .main-nav__link:hover {
-        color: var(--white);
+        color: #383F82;
     }
 
     .main-nav__item:hover .main-nav__link {
         padding-inline-start: 10px;
+    }
+
+    .more-info {
+        order: 3;
+    }
+
+    .main-nav:hover+.more-info {
+        display: none;
+    }
+
+    .login-btn {
+        display: none;
     }
 
     .more-info .lang:nth-of-type(1) {
@@ -286,10 +338,6 @@ header .container {
 /* Start main */
 
 /* Start landing section */
-.landing {
-    position: relative;
-}
-
 .landing__pattern {
     position: absolute;
     background: url(../images/landing_pattern.png) no-repeat;
@@ -304,7 +352,6 @@ header .container {
     color: var(--dark-blue);
     font-size: 6.875rem;
     font-weight: 900;
-    letter-spacing: 2.5px;
     margin-block: 0 3.375rem;
 }
 
@@ -340,7 +387,6 @@ header .container {
     color: var(--white);
     border-radius: 8px;
     font-weight: 600;
-    letter-spacing: 2px;
     font-size: 1.25rem;
     line-height: 130%;
 }
@@ -364,7 +410,6 @@ header .container {
 
     .landing__title {
         font-size: 2.75rem;
-        letter-spacing: 2.5px;
         line-height: 140%;
         margin-block: 0 1.5rem;
     }
@@ -399,10 +444,6 @@ header .container {
 /* End landing section */
 
 /* Start benefits section */
-.benefits {
-    position: relative;
-}
-
 .benefits__pattern {
     position: absolute;
     background: url(../images/benefits_pattern.png) no-repeat;
@@ -434,7 +475,7 @@ header .container {
     font-size: 1rem;
     line-height: 160%;
     margin-block: 1.5rem 2rem;
-    inline-size: 65%;
+    inline-size: 80%;
 }
 
 .benefits__video {
