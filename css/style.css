@@ -244,7 +244,7 @@ header .container {
     .main-nav__list {
         position: fixed;
         inline-size: 60%;
-        inset-block-start: 5.625rem;
+        inset-block-start: 3rem;
         flex-direction: column;
         background-color: #4A7EFF;
         z-index: 5;
@@ -359,6 +359,7 @@ header .container {
         inline-size: 14rem;
         inset-block-start: -5.5rem;
         inset-inline-start: -6.5rem;
+        z-index: -1;
     }
 
     .landing__title {
