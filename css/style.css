@@ -520,3 +520,123 @@ header .container {
 /* End benefits section */
 
 /* End main */
+
+/* Start footer */
+.footer>.container {
+    background-color: #3C4387;
+    min-block-size: 26em;
+    color: var(--white);
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(16em, 1fr));
+    column-gap: 4rem;
+    padding-block: 4rem;
+}
+
+.footer .logo-container {
+    display: block;
+    inline-size: 9rem;
+    block-size: 2.375rem;
+    margin-block: 0 5rem;
+}
+
+.footer__title {
+    margin-block-end: 2.34375em;
+    font-weight: 700;
+    font-size: 1.75rem;
+    line-height: 150%;
+}
+
+.footer__description {
+    font-size: 1rem;
+}
+
+.navigation__list {
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.navigation__item:not(:last-of-type) {
+    padding-block-end: 2rem;
+}
+
+.navigation__link {
+    color: var(--white);
+    font-size: 1.25rem;
+    font-weight: 400;
+}
+
+.navigation__link:hover {
+    font-weight: 600;
+}
+
+.footer__image {
+    inline-size: 18rem;
+}
+
+.footer__image img {
+    inline-size: 100%;
+    object-fit: contain;
+}
+
+.copywrite {
+    min-block-size: 3em;
+    background-color: var(--dark-blue);
+    padding-block: .8rem;
+}
+
+.copywrite .container {
+    justify-content: space-between;
+}
+
+.copywrite__content {
+    font-size: 1rem;
+    color: var(--white);
+}
+
+.social__link {
+    inline-size: 1.75rem;
+    block-size: 1.75rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-inline: .5rem;
+}
+
+.social__icon {
+    max-inline-size: 100%;
+    color: var(--light-gray);
+}
+
+@media (max-width:62em) {
+    .footer>.container {
+        padding-block: 2rem;
+    }
+
+    .footer .logo-container,
+    .footer__title {
+        margin-block: 2.5rem 1rem;
+    }
+
+    .footer__description {
+        inline-size: 100%;
+    }
+
+    .navigation__link {
+        font-size: 1rem;
+    }
+
+    .footer__image {
+        inline-size: 15rem;
+    }
+
+    .copywrite .container {
+        flex-direction: column;
+    }
+
+    .copywrite__content {
+        margin-block-end: .625rem;
+    }
+
+}
+
+/* End footer */
