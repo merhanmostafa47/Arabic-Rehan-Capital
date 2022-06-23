@@ -541,7 +541,7 @@ header .container {
 }
 
 .box__icon img {
-    inline-size: 50%;
+    inline-size: 45%;
 }
 
 .box__title {
@@ -552,6 +552,7 @@ header .container {
 }
 
 .box__body {
+    inline-size: 90%;
     font-weight: 1rem;
     line-height: 160%;
 }
@@ -571,9 +572,76 @@ header .container {
         font-size: 1rem;
         margin-block-end: .75rem;
     }
+
+    .box__body {
+        inline-size: 95%;
+    }
 }
 
 /* End why section */
+
+/* Start how section */
+.how .section-title {
+    margin-block-end: 3rem;
+}
+
+.how .boxes-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(12em, 1fr));
+    column-gap: 3rem;
+    color: var(--font-color);
+}
+
+.box {
+    flex-direction: column;
+    align-items: flex-start;
+    margin-block-end: 2rem;
+}
+
+.how .box__icon {
+    inline-size: 4.75rem;
+    block-size: 4.75rem;
+    border-radius: 50%;
+    margin-block: 0 .375rem 1.5rem .375rem;
+    border: .4rem solid var(--background-color);
+    outline: 1px solid var(--second-main-color);
+    position: relative;
+}
+
+.how .box__icon::after {
+    position: absolute;
+    content: '';
+    inline-size: 5.75rem;
+    block-size: 5.75rem;
+    border-radius: 50%;
+    border: 1px solid;
+    border-color: var(--main-color) transparent var(--main-color) transparent;
+    transform: rotate(-40deg);
+}
+
+.box__num {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--white);
+}
+
+@media (max-width:62em) {
+    .how .section-title {
+        margin-block-end: 2rem;
+    }
+
+    .how .box__icon {
+        inline-size: 3.75rem;
+        block-size: 3.75rem;
+    }
+
+    .how .box__icon::after {
+        inline-size: 4.75rem;
+        block-size: 4.75rem;
+    }
+}
+
+/* End how section */
 
 /* Start about section */
 .about {
