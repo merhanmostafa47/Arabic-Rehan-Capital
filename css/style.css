@@ -318,6 +318,7 @@ header .container {
     .hamburger {
         display: block;
         order: 1;
+        z-index: 5;
     }
 
     .logo-container {
