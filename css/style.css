@@ -643,7 +643,6 @@ header .container {
     }
 
     .card {
-
         margin-inline: 1rem;
     }
 
@@ -658,7 +657,11 @@ header .container {
     }
 
     .slides .inner {
-        min-block-size: 23rem;
+        min-block-size: 25rem;
+    }
+
+    .controls {
+        inline-size: 90%;
     }
 
     .bullets {
